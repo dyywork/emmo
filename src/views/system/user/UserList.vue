@@ -1,7 +1,11 @@
 <template>
   <div class="app-container">
     <el-card>
+      <el-row style="margin-bottom: 10px">
+        <el-button type="primary" size="mini" @click="$refs.create.show()">新增</el-button>
+      </el-row>
       <standard-table
+        ref="table"
         :columns="columns"
         :api="getList"
       >
@@ -12,15 +16,17 @@
         </el-table-column>
       </standard-table>
     </el-card>
+    <create-user ref="create" @getList="getSearchList" />
   </div>
 </template>
 
 <script>
 import StandardTable from '@/components/StandardTable/StandardTable'
+import createUser from '@/views/system/user/components/createUser'
 import { getList } from '@/api/user'
 export default {
   name: 'UserList1',
-  components: { StandardTable },
+  components: { StandardTable, createUser },
   data() {
     return {
       columns: [
@@ -37,6 +43,9 @@ export default {
     getList,
     handleDelete(row) {
 
+    },
+    getSearchList() {
+      this.$refs.table.getList()
     }
   }
 }

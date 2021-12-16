@@ -42,7 +42,7 @@ module.exports = {
     proxy: {
       // 后端本地环境
       '/api': {
-        target: 'http://10.18.75.56:3000',
+        target: 'http://10.18.75.35:3000',
         changeOrigin: true,
         ws: true,
         pathRewrite: {

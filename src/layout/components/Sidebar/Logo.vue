@@ -24,14 +24,15 @@ export default {
   },
   data() {
     return {
-      title: 'Vue Element Admin',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '嘻嘻哈哈',
+      logo: require('@/assets/bg.jpg')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+@import "src/styles/variables";
 .sidebarLogoFade-enter-active {
   transition: opacity 1.5s;
 }
@@ -46,8 +47,7 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #2b2f3a;
-  text-align: center;
+  background: $menuBg;
   overflow: hidden;
 
   & .sidebar-logo-link {
@@ -59,6 +59,7 @@ export default {
       height: 32px;
       vertical-align: middle;
       margin-right: 12px;
+      margin-left: 10px;
     }
 
     & .sidebar-title {
